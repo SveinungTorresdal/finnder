@@ -37,12 +37,12 @@
         <div class="mb-0 d-flex flex-row">
             <div class="d-inline-block rating me-3">
                 <span>
-                    {#each {length: stars} as _, i}
+                    {#each { length: stars } as _, i}
                         ⭐
                     {/each}
                 </span>
                 <span class="empty">
-                    {#each {length: totalStars - stars} as _, i}
+                    {#each { length: totalStars - stars } as _, i}
                         ⭐
                     {/each}
                 </span>

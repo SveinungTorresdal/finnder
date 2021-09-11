@@ -1,8 +1,8 @@
 import { Loader as MapsLoader } from "@googlemaps/js-api-loader"
-import { readable, writable } from 'svelte/store';
+import { readable, writable } from 'svelte/store'
 
 function createFinn () {
-    const { subscribe, set, update } = writable({
+    const { subscribe, update } = writable({
         description: '',
         location: null,
         placeId: '',
@@ -21,15 +21,13 @@ export const finn = createFinn()
 const loader = new MapsLoader({
     apiKey: 'MAPS_API_KEY',
     version: "weekly",
-    libraries: [
-        'places'
-    ],
+    libraries: ['places'],
     region: 'no'
 })
 
-export const loading = readable(true, function start(set) {
-    loader.load()
-        .then(() => set(loader.loading))
+export const loading = readable(true, set => {
+    loader.load().
+        then(() => set(loader.loading))
 
     return function stop() {}
 })

@@ -1,15 +1,23 @@
 module.exports = {
-    "env": {
+    env: {
         "browser": true,
         "es2021": true,
         "node": true
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
+    extends: "eslint:recommended",
+    ignorePatterns: ['node_modules', 'public/build/'],
+    overrides: [
+        {
+          files: ['**/*.svelte'],
+          processor: 'svelte3/svelte3'
+        }
+    ],
+    parserOptions: {
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "rules": {
+    plugins: ['svelte3'],
+    rules: {
         "accessor-pairs": "error",
         "array-bracket-newline": "error",
         "array-bracket-spacing": [
@@ -264,7 +272,7 @@ module.exports = {
             "error",
             "never"
         ],
-        "semi": "never",
+        "semi": ["error", "never"],
         "semi-spacing": [
             "error",
             {
@@ -311,4 +319,4 @@ module.exports = {
             "never"
         ]
     }
-};
+}

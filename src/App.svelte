@@ -29,5 +29,5 @@
 
 	import { loading } from './store'
 
-	import { Spinner } from 'sveltestrap';
+	import { Spinner } from 'sveltestrap'
 </script>

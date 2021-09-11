@@ -34,7 +34,7 @@
 {/if}
 
 <script>
-    import { Button, Icon, ListGroup } from 'sveltestrap'
+    import { Button, Icon } from 'sveltestrap'
     import { loading } from '../store'
     import { fadeSlide, widthResize } from '../transitions'
 

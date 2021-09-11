@@ -1,13 +1,14 @@
-var ghpages = require('gh-pages');
+var ghpages = require('gh-pages')
 
 ghpages.publish(
-    'public', // path to public directory
+    // path to public directory
+    'public',
     {
         branch: 'gh-pages',
-        repo: 'https://github.com/SveinungTorresdal/finnder.git', // Update to point to your repository  
+        repo: 'https://github.com/SveinungTorresdal/finnder.git', 
         user: {
-            name: 'SveinungTorresdal', // update to use your name
-            email: 'sveinung.torresdal@gmail.com' // Update to use your email
+            name: 'SveinungTorresdal',
+            email: 'sveinung.torresdal@gmail.com'
         }
     },
     () => {

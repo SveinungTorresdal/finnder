@@ -1,5 +1,4 @@
-import { slide } from 'svelte/transition';
-import { elasticOut } from 'svelte/easing';
+import { slide } from 'svelte/transition'
 
 export function fadeSlide(node, options) {
     const slideTrans = slide(node, options)
@@ -9,16 +8,14 @@ export function fadeSlide(node, options) {
             ${slideTrans.css(t)}
             opacity: ${t};
         `
-    };
+    }
 }
 
-export function widthResize(node, {duration}) {
+export function widthResize(node, { duration }) {
     return {
         duration,
-        css: t => {
-            return `
+        css: t => `
                 max-width: calc(${t} * 100%)
             `
-        }
     }
 }

@@ -1,16 +1,18 @@
 <div id="map" />
 
 <script>
+	/* global google */
+
 	import { finn, loading } from '../store'
 
-	$: marker = !!map ? initMarker() : null
+	$: marker = map ? initMarker() : null
 	$: map = !$loading ? initMap() : null
 	$: setMarker($finn)
 	
 
 	function initMarker () {
 		return new google.maps.Marker({
-			map: map,
+			map,
 		})
 	}
 

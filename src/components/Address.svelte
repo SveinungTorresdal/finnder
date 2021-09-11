@@ -74,8 +74,10 @@
 {/if}
 
 <script>
+    /* global google */
+
     // Components
-    import { fadeSlide } from '../transitions';
+    import { fadeSlide } from '../transitions'
     import { Alert, Button, Icon, Input, Table, Tooltip } from 'sveltestrap'
 
     // Store
@@ -100,7 +102,7 @@
 
     // Methods
     function search () {
-        clearTimeout(bouncer);
+        clearTimeout(bouncer)
         bouncer = setTimeout(() => {
             if (address.length < 2) {
                 alert.text = ''
@@ -115,20 +117,22 @@
                 AutocompleteService.getPlacePredictions({ componentRestrictions, input: address, sessionToken }, (predictions, status) => {
                     if (status === 'OK') {
                         alert.text = ''
-                        places = [ ...predictions ]
-                    } else if (status === 'ZERO_RESULTS' || status === 'NOT_FOUND') {
+                        places = [...predictions]
+                    }
+ else if (status === 'ZERO_RESULTS' || status === 'NOT_FOUND') {
                         alert = {
                             color: 'light',
                             text: 'No results'
                         }
                         places = []
-                    } else {
+                    }
+ else {
                         alert = {
                             color: 'danger',
                             text: status
                         }
                     }
-                });
+                })
             }
 		}, 500)
     }
@@ -146,14 +150,14 @@
         address = description
         places = []
 
-        GeocoderService.geocode({ placeId }, (result, status) => {
+        GeocoderService.geocode({ placeId }, result => {
             const { geometry: { location } } = result[0]
 
             finn.save({ description, location, placeId })
         })
     }
 
-    function text ({description = '', matched_substrings = []}) {
+    function text ({ description = '', matched_substrings = [] }) {
         if (!description || !matched_substrings.length) { return [] }
         
         let list = []

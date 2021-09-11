@@ -40,7 +40,7 @@
 {/if}
 
 <script>
-    import { fadeSlide } from '../transitions';
+    import { fadeSlide } from '../transitions'
     import { Input, Label } from 'sveltestrap'
     import { options } from '../store'
 
