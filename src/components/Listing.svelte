@@ -26,10 +26,10 @@
     }
 </style>
 
-<ListGroupItem class="p-3 d-flex flex-row">
-    <aside class={`bg-light border border-2 ${img ? 'border-primary' : ''} me-3 overflow-hidden rounded-circle`}>
+<ListGroupItem class="p-3 ps-2 d-flex flex-row">
+    <aside class={`bg-light border border-2 ${img ? 'border-primary' : ''} flex-shrink-0 me-3 overflow-hidden rounded-1`}>
         {#if img}
-        <img alt="House" src={img} />
+        <img alt={street} src={img} />
         {/if}
     </aside>
     <main class="flex-grow-1 p-1 d-flex flex-column justify-content-center text-overflow">
