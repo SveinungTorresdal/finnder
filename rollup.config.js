@@ -50,7 +50,10 @@ export default {
 			preprocess: preprocess()
 		}),
 		replace({
-			MAPS_API_KEY: process.env.MAPS_API_KEY
+			preventAssignment: true,
+			values: {
+				MAPS_API_KEY: process.env.MAPS_API_KEY
+			}
 		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
