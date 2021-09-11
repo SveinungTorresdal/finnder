@@ -1,4 +1,4 @@
-<style>
+<style lang="scss">
     main {
         max-width: 100vw;
     }
@@ -27,6 +27,12 @@
             <Listing commute="20" />
             <Listing commute="30" />
             <Listing commute="40" />
+            <Listing commute="7" />
+            <Listing commute="10" />
+            <Listing commute="13" />
+            <Listing commute="15" />
+            <Listing commute="20" />
+            <Listing commute="30" />
         </ul>
     </div>
     {/if}

@@ -1,4 +1,4 @@
-<style>
+<style lang="scss">
     aside, img {
         --size: 4rem;
         height: var(--size);
@@ -12,13 +12,12 @@
 
     .rating {
         font-size: 0;
-    }
 
-    .rating > * {
-        font-size: 1rem;
-        line-height: 1.4rem;
+        & > * {
+            font-size: 1rem;
+            line-height: 1.4rem;
+        }
     }
-
     .text-overflow {
         white-space: nowrap;
         overflow: hidden;
