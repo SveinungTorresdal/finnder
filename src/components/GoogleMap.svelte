@@ -1,8 +1,6 @@
 <div id="map" />
 
 <script>
-	/* global google */
-
 	import { finn, loading } from '../store'
 
 	$: marker = map ? initMarker() : null
@@ -11,28 +9,28 @@
 	
 
 	function initMarker () {
-		return new google.maps.Marker({
-			map,
-		})
+	    return new google.maps.Marker({
+	        map,
+	    })
 	}
 
 	function initMap () {
-		return new google.maps.Map(document.getElementById("map"), {
-			center: {
-				lat: 59.90996439340482,
-				lng: 10.741734174205012
-			},
-			fullscreenControl: false,
-			mapId: '540ae4723420088d',
-			streetViewControl: false,
-			zoom: 14
-		})
+	    return new google.maps.Map(document.getElementById("map"), {
+	        center: {
+	            lat: 59.90996439340482,
+	            lng: 10.741734174205012
+	        },
+	        fullscreenControl: false,
+	        mapId: '540ae4723420088d',
+	        streetViewControl: false,
+	        zoom: 14
+	    })
 	}
 
 	function setMarker (finn) {
-		if (!map || !marker) { return }
+	    if (!map || !marker) { return }
 
-		map.setCenter(finn.location)
-		marker.setPosition(finn.location)
+	    map.setCenter(finn.location)
+	    marker.setPosition(finn.location)
 	}
 </script>

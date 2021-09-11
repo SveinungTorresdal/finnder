@@ -5,11 +5,14 @@ module.exports = {
         "node": true
     },
     extends: "eslint:recommended",
+    globals: {
+        "google": "readonly"
+    },
     ignorePatterns: ['node_modules', 'public/build/'],
     overrides: [
         {
-          files: ['**/*.svelte'],
-          processor: 'svelte3/svelte3'
+            files: ['**/*.svelte'],
+            processor: 'svelte3/svelte3'
         }
     ],
     parserOptions: {
@@ -107,7 +110,10 @@ module.exports = {
             "error",
             "beside"
         ],
-        "indent": "off",
+        "indent": [
+            "warn",
+            4
+        ],
         "init-declarations": "off",
         "jsx-quotes": "error",
         "key-spacing": "error",

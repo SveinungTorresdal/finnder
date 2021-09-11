@@ -74,8 +74,6 @@
 {/if}
 
 <script>
-    /* global google */
-
     // Components
     import { fadeSlide } from '../transitions'
     import { Alert, Button, Icon, Input, Table, Tooltip } from 'sveltestrap'
@@ -119,14 +117,14 @@
                         alert.text = ''
                         places = [...predictions]
                     }
- else if (status === 'ZERO_RESULTS' || status === 'NOT_FOUND') {
+                    else if (status === 'ZERO_RESULTS' || status === 'NOT_FOUND') {
                         alert = {
                             color: 'light',
                             text: 'No results'
                         }
                         places = []
                     }
- else {
+                    else {
                         alert = {
                             color: 'danger',
                             text: status
@@ -134,7 +132,7 @@
                     }
                 })
             }
-		}, 500)
+        }, 500)
     }
 
     function setCenter () {
