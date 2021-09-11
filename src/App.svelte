@@ -8,15 +8,15 @@
 
 <GoogleMap />
 {#if $loading}
-<Overlay added="d-flex flex-column justify-content-center align-items-center">
+<Overlay class="d-flex flex-column justify-content-center align-items-center">
 	<Spinner id="loading-maps" color="primary" size="md" />
 </Overlay>
 {/if}
-<Overlay added="px-5 d-flex flex-column justify-content-end align-items-center">
+<Overlay class="px-5 d-flex flex-column justify-content-end align-items-center">
 	<Options />
 	<Address />
 </Overlay>
-<Overlay added="d-flex flex-column justify-content-center align-items-end">
+<Overlay class="d-flex flex-column justify-content-center align-items-end">
 	<Nearby />
 </Overlay>
 
