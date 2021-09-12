@@ -324,5 +324,8 @@ module.exports = {
             "error",
             "never"
         ]
+    },
+    settings: {
+        "svelte3/ignore-styles": () => true
     }
 }
