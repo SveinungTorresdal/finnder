@@ -43,55 +43,13 @@ describe('Store \'finn\'', () => {
         }
     })
 
-    it('method \'subscribe\' creates store with default vals', () => {
-        let storeData
-        // eslint-disable-next-line no-return-assign
-        const unsub = store.subscribe(data => storeData = data)
-        unsub()
-
-        const expected = {
-            description: {
-                type: 'string',
-                value: ''
-            },
-            location: {
-                type: 'object'
-            },
-            placeId: {
-                type: 'string',
-                value: ''
-            },
-            timestamp: {
-                obj: Date,
-                type: 'object'
-            }
-        }
-
-        Object.entries(expected).forEach(([key, { obj, type, value }]) => {
-            const { [key]: item } = storeData
-
-            expect(item).toBeDefined()
-            expect(typeof item).toEqual(type)
-
-            if (value) {
-                expect(item).toBe(value)
-            }
-
-            if (obj) {
-                expect(item instanceof obj)
-            }
-        })
-    })
-
-    it('has methods \'ping\', \'subscribe\', \'save\'', () => {
-        const list = ['ping', 'save']
-
-        expect(Object.keys(store)).toStrictEqual(expect.arrayContaining(list))
-
-        list.forEach(key => {
-            expect(store[key]).toBeDefined()
-            expect(typeof store[key]).toEqual('function')
-        })
+    it.each`
+    func
+    ${'ping'}
+    ${'save'}
+    `('has method $func', ({ func }) => {
+        expect(store[func]).toBeDefined()
+        expect(typeof store[func]).toEqual('function')
     })
 
     it('method \'ping\' updates timestamp', () => {

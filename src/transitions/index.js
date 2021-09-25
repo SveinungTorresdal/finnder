@@ -15,7 +15,7 @@ export function widthResize(node, { duration }) {
     return {
         duration,
         css: t => `
-                max-width: calc(${t} * 100%)
-            `
+            max-width: calc(${t} * 100%)
+        `
     }
 }
