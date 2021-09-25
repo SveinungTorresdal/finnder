@@ -97,7 +97,7 @@
     let componentRestrictions = { country: 'no' }
     let places = []
     let sessionToken = null
-
+    
     // Methods
     function search () {
         clearTimeout(bouncer)
@@ -149,7 +149,9 @@
         places = []
 
         GeocoderService.geocode({ placeId }, result => {
-            const { geometry: { location } } = result[0]
+            const { geometry: { location: l } } = result[0]
+
+            const location = { lat: l.lat(), lng: l.lng() }
 
             finn.save({ description, location, placeId })
         })

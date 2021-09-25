@@ -2,6 +2,7 @@ module.exports = {
     env: {
         "browser": true,
         "es2021": true,
+        "jest/globals": true,
         "node": true
     },
     extends: "eslint:recommended",
@@ -19,7 +20,7 @@ module.exports = {
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    plugins: ['svelte3'],
+    plugins: ['jest', 'svelte3'],
     rules: {
         "accessor-pairs": "error",
         "array-bracket-newline": "error",

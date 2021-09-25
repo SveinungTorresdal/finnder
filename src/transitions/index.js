@@ -1,9 +1,9 @@
 import { slide } from 'svelte/transition'
 
-export function fadeSlide(node, options) {
-    const slideTrans = slide(node, options)
+export function fadeSlide(node, { delay, duration, easing }) {
+    const slideTrans = slide(node, { delay, duration, easing })
     return {
-        duration: options.duration,
+        duration,
         css: t => `
             ${slideTrans.css(t)}
             opacity: ${t};
