@@ -1,5 +1,10 @@
 var ghpages = require('gh-pages')
 
+/**
+ * run with cmd:
+ * node ./gh-pages.js
+ */
+
 ghpages.publish(
     // path to public directory
     'public',
